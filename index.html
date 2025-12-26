@@ -29,23 +29,26 @@ margin: 0 auto;
 padding: 20px;
 }
 
-/* ✅ FIX: Emoji rendering (works on Windows, Mac, Android, iOS) */
+/* ✅ FIX: Proper emoji rendering */
 .emoji {
 font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif !important;
 font-style: normal;
 font-weight: normal;
-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
 }
 
-/* Animate */
+/* Animation keyframes */
 @keyframes fadeInUp {
-from {opacity: 0; transform: translateY(30px);}
-to {opacity: 1; transform: translateY(0);}
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fadeIn {from {opacity: 0;} to {opacity: 1;}}
-@keyframes scaleIn {from {opacity: 0; transform: scale(0.9);} to {opacity: 1; transform: scale(1);}}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes scaleIn {
+from { opacity: 0; transform: scale(0.9); }
+to { opacity: 1; transform: scale(1); }
+}
 
 /* Header */
 .header {
@@ -65,14 +68,12 @@ font-weight: 800;
 color: #ffffff;
 margin-bottom: 15px;
 text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-animation: fadeIn 0.8s ease 0.2s both;
 }
 .tagline {
 font-size: 1.4rem;
 color: rgba(255, 255, 255, 0.95);
 margin-bottom: 10px;
 font-weight: 600;
-animation: fadeIn 0.8s ease 0.3s both;
 }
 .subtitle {
 font-size: 1.1rem;
@@ -80,14 +81,12 @@ color: rgba(255, 255, 255, 0.85);
 max-width: 700px;
 margin: 0 auto;
 line-height: 1.6;
-animation: fadeIn 0.8s ease 0.4s both;
 }
 
 /* CTA */
 .hero-cta {
 text-align: center;
 margin: 40px 0;
-animation: scaleIn 0.6s ease 0.5s both;
 }
 .cta-button {
 background: rgba(255, 255, 255, 0.25);
@@ -104,7 +103,79 @@ text-decoration: none;
 display: inline-block;
 }
 
-/* Features, Services, Stats, Footer, etc. — unchanged (same as your original) */
+/* Stats */
+.stats-section {
+background: rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.25);
+border-radius: 24px;
+padding: 50px 30px;
+margin: 60px 0;
+}
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 40px;
+text-align: center;
+}
+.stat-number {
+font-size: 3rem;
+font-weight: 800;
+}
+.stat-label {
+font-size: 1.1rem;
+color: rgba(255, 255, 255, 0.85);
+}
+
+/* Section Title */
+.section-title {
+text-align: center;
+font-size: 2.5rem;
+font-weight: 800;
+margin-bottom: 50px;
+color: #ffffff;
+}
+
+/* Feature Grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+.feature-card {
+background: rgba(255, 255, 255, 0.15);
+border-radius: 24px;
+padding: 40px 30px;
+text-align: center;
+}
+.feature-icon {
+font-size: 3rem;
+margin-bottom: 20px;
+}
+.feature-title {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 10px;
+color: #fff;
+}
+.feature-description {
+font-size: 1rem;
+color: rgba(255, 255, 255, 0.85);
+line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px 20px;
+margin-top: 60px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 24px;
+}
+.footer-text {
+color: rgba(255, 255, 255, 0.75);
+font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
@@ -143,7 +214,7 @@ display: inline-block;
 </div>
 </div>
 
-<!-- Features Section -->
+<!-- Features -->
 <section class="features-section">
 <h2 class="section-title emoji">✨ Why Choose FastDL Hub?</h2>
 <div class="features-grid">
